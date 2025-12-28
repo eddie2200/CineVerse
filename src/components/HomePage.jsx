@@ -10,9 +10,14 @@ function HomePage() {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [favorites, setFavorites] = useState([]);
+
+  // Theme + Sorting + Filtering
+  const [theme, setTheme] = useState("dark");
+  const [sortBy, setSortBy] = useState("default");
+  const [yearFilter, setYearFilter] = useState("");
+
   const navigate = useNavigate();
 
-  // Fetch movies from OMDb
   async function fetchMovies(search = "Avengers") {
     try {
       const res = await axios.get(
@@ -30,145 +35,186 @@ function HomePage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (query.trim() !== "") fetchMovies(query.trim());
-  };
-
-  const handleWatchNow = (imdbID) => {
-    navigate(`/movie/${imdbID}`);
+    if (query.trim()) fetchMovies(query.trim());
   };
 
   const toggleFavorite = (movie) => {
-    setFavorites((prev) => {
-      if (prev.find((m) => m.imdbID === movie.imdbID)) {
-        return prev.filter((m) => m.imdbID !== movie.imdbID);
-      } else {
-        return [...prev, movie];
-      }
-    });
+    setFavorites((prev) =>
+      prev.find((m) => m.imdbID === movie.imdbID)
+        ? prev.filter((m) => m.imdbID !== movie.imdbID)
+        : [...prev, movie]
+    );
   };
 
-  const isFavorite = (imdbID) => favorites.some((m) => m.imdbID === imdbID);
+  const isFavorite = (id) => favorites.some((m) => m.imdbID === id);
+
+  // Sorting & Filtering
+  const processedMovies = [...movies]
+    .filter((m) => (yearFilter ? m.Year === yearFilter : true))
+    .sort((a, b) => {
+      if (sortBy === "year") return b.Year - a.Year;
+      if (sortBy === "title") return a.Title.localeCompare(b.Title);
+      return 0;
+    });
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-      {/* Navbar */}
-      <nav className="flex flex-wrap items-center justify-between p-4 bg-black bg-opacity-80 relative">
-       {/* Hamburger */}
-<div className="relative z-50">
-  <div
-    className="text-2xl cursor-pointer"
-    onClick={() => setShowDropdown(!showDropdown)}
-  >
-    ☰
-  </div>
-
-  {showDropdown && (
-    <>
-      {/* Blur Overlay */}
-      <div
-        className="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"
-        onClick={() => setShowDropdown(false)}
-      />
-
-      {/* Dropdown */}
-      <div className="absolute top-10 left-0 bg-gray-800 text-white rounded shadow-lg py-2 w-40 z-50">
-        {[
-          "Action",
-          "Comedy",
-          "Drama",
-          "Sci-Fi",
-          "Romantic",
-          "Animation",
-          "Musical",
-          "Kenyan Shows",
-        ].map((cat) => (
+    <div
+      className={`min-h-screen flex flex-col ${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-100 text-black"
+      }`}
+    >
+      {/* NAVBAR */}
+      <nav className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 bg-black/80">
+        {/* Left Section */}
+        <div className="flex items-center justify-between">
           <div
-            key={cat}
-            className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
-            onClick={() => {
-              fetchMovies(cat);
-              setShowDropdown(false);
-            }}
+            className="text-2xl cursor-pointer"
+            onClick={() => setShowDropdown(!showDropdown)}
           >
-            {cat}
+            ☰
           </div>
-        ))}
-      </div>
-    </>
-  )}
-</div>
+        </div>
 
+        {/* Dropdown */}
+        {showDropdown && (
+          <>
+            <div
+              className="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"
+              onClick={() => setShowDropdown(false)}
+            />
+            <div className="absolute top-16 left-4 bg-gray-800 rounded shadow-lg py-2 w-40 z-50">
+              {[
+                "Action",
+                "Comedy",
+                "Drama",
+                "Sci-Fi",
+                "Romantic",
+                "Animation",
+                "Musical",
+                "Kenyan Shows",
+              ].map((cat) => (
+                <div
+                  key={cat}
+                  className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                  onClick={() => {
+                    fetchMovies(cat);
+                    setShowDropdown(false);
+                  }}
+                >
+                  {cat}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
-        {/* Search bar */}
-        <form className="flex-1 mx-4 min-w-[200px]" onSubmit={handleSearch}>
+        {/* Search */}
+        <form
+          onSubmit={handleSearch}
+          className="w-full sm:flex-1 sm:mx-4"
+        >
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search movies..."
-            className="w-full px-4 py-2 rounded-lg text-black focus:outline-none"
+            className="w-full px-4 py-2 rounded text-black"
           />
         </form>
 
-        {/* Navigation links */}
-        <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
+        {/* Controls */}
+        <div className="flex flex-wrap gap-2 justify-center sm:justify-end">
           <button
             onClick={() => navigate("/favorites")}
-            className="hover:underline text-black bg-white px-3 py-1 rounded"
+            className="bg-white text-black px-3 py-1 rounded"
           >
             Favorites
           </button>
+
           <button
             onClick={() => navigate("/coming-soon")}
-            className="hover:underline text-black bg-white px-3 py-1 rounded"
+            className="bg-white text-black px-3 py-1 rounded"
           >
             Coming Soon
           </button>
+
+          <button
+            onClick={() =>
+              setTheme(theme === "dark" ? "light" : "dark")
+            }
+            className="bg-white text-black px-3 py-1 rounded"
+          >
+            {theme === "dark" ? "☀" : "🌙"}
+          </button>
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="px-2 py-1 rounded text-black"
+          >
+            <option value="default">Sort</option>
+            <option value="year">Year</option>
+            <option value="title">Title</option>
+          </select>
+
+          <input
+            type="number"
+            placeholder="Year"
+            value={yearFilter}
+            onChange={(e) => setYearFilter(e.target.value)}
+            className="px-2 py-1 rounded text-black w-24"
+          />
         </div>
       </nav>
 
-      {/* Movie grid */}
-      <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
-          {movies.map((movie) => (
+      {/* MOVIE GRID */}
+      <main className="flex-1 p-4 sm:p-6 max-w-7xl mx-auto w-full">
+        <div className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4 
+          xl:grid-cols-5 
+          gap-6
+        ">
+          {processedMovies.map((movie) => (
             <div
               key={movie.imdbID}
-              className="relative bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-105 transition-transform duration-200"
+              className="relative bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-105 transition"
             >
-              {/* Favorite Heart */}
               <div
-                className="absolute top-2 right-2 text-2xl cursor-pointer"
+                className="absolute top-2 right-2 text-xl cursor-pointer"
                 onClick={() => toggleFavorite(movie)}
               >
                 {isFavorite(movie.imdbID) ? "❤️" : "🤍"}
               </div>
 
               <img
-                src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg"}
+                src={
+                  movie.Poster !== "N/A"
+                    ? movie.Poster
+                    : "/placeholder.jpg"
+                }
                 alt={movie.Title}
-                className="w-full h-64 sm:h-72 md:h-80 lg:h-64 2xl:h-80 object-cover"
+                className="w-full h-64 sm:h-72 md:h-80 object-cover"
               />
 
-              {/* Movie info bar */}
-              <div className="absolute bottom-10 left-0 w-full flex justify-between items-center px-2 py-1 bg-black bg-opacity-70 text-sm">
-                <span>⭐ {movie.imdbRating || "N/A"}</span>
-                <span>{movie.Runtime || "N/A"}</span>
-              </div>
-
-              {/* Watch Now button */}
               <button
-                className="absolute bottom-2 left-2 bg-white text-black px-2 py-1 text-sm rounded hover:bg-gray-200"
-                onClick={() => handleWatchNow(movie.imdbID)}
+                className="absolute bottom-2 left-2 bg-white text-black px-2 py-1 text-sm rounded"
+                onClick={() => navigate(`/movie/${movie.imdbID}`)}
               >
-              WATCH NOW
+                WATCH NOW
               </button>
             </div>
           ))}
         </div>
-      </div>
+      </main>
 
-      {/* Footer */}
-      <footer className="bg-black bg-opacity-80 text-center py-4 mt-auto">
+      {/* FOOTER */}
+      <footer className="bg-black/80 text-center py-4 text-sm">
         &copy; {new Date().getFullYear()} Cineflix. All rights reserved.
       </footer>
     </div>

@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "overview": "A skilled thief enters dreams to steal secrets.",
+    "poster": "https://via.placeholder.com/300x450",
+    "year": "2010",
+    "genre": "Sci-Fi"
+  },
+  {
+    "id": 2,
+    "title": "Interstellar",
+    "overview": "A journey beyond the stars to save humanity.",
+    "poster": "https://via.placeholder.com/300x450",
+    "year": "2014",
+    "genre": "Sci-Fi"
+  }
+]
+

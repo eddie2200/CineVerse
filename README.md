@@ -49,7 +49,7 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
 ## Installation & Setup
 Follow these steps to run CineVerse locally:
 
-- Clone the repository
+``- Clone the repository
 
 ``git clone git@github.com:your-username/cineverse.git
 cd cineverse``
@@ -70,4 +70,56 @@ cd cineverse``
 ``npm start``
 
 
-- Open your browser at ``http://localhost:3000``
+- Open your browser at ``http://localhost:3000````
+
+## Usage
+- Enter a movie title in the search bar
+- Click a movie card to view details
+- Add movies to your favorites list using the heart button
+- Sort and filter movies using the options menu
+
+  ## Wireframes
+The wireframes were created using Figma to help visualize how the website would look upon completion and as a guide to me as the developer on what features to include and where each feature goes. Here id the link to view the wireframes:
+  ``https://www.figma.com/design/SsI5CIJnE25zX9ogXZE2lS/cineverse-wireframes?node-id=0-1&t=WbTijeHZxs4xcaYK-1``
+  ## API Integration
+  CineVerse uses the OMDb API to fetch movie data in real-time.
+  Endpoint Example:
+
+``https://www.omdbapi.com/?apikey=[API_KEY]&s=Inception``
+
+
+Response Example:
+
+``{
+  "Search": [
+    {
+      "Title": "Inception",
+      "Year": "2010",
+      "imdbID": "tt1375666",
+      "Type": "movie",
+      "Poster": "https://example.com/poster.jpg"
+    }
+  ]
+}``
+
+## Future Enhancements
+
+- User authentication & profiles
+- Movie recommendations based on favorites
+- Dark mode toggle
+- Pagination for large datasets
+- Advanced filtering by director, actors, and ratings
+
+## Contributing
+
+Contributions are welcome!
+
+``- Fork the repository
+- Create a branch: git checkout -b feature/YourFeature
+- Commit your changes: git commit -m 'Add new feature'
+- Push to the branch: git push origin feature/YourFeature
+- Create a Pull Request``
+
+## License
+
+This project is licensed under the MIT License

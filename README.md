@@ -16,7 +16,7 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
     
 ## Project Overview
 
-- **CineVerse is an interactive web application that aggregates movie information using the OMDb API, allowing users to:
+- CineVerse is an interactive web application that aggregates movie information using the OMDb API, allowing users to:
 
 - **Search movies by title, genre, or year
 

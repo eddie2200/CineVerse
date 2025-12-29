@@ -49,7 +49,7 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
 ## Installation & Setup
 Follow these steps to run CineVerse locally:
 
-``- Clone the repository
+`` - Clone the repository
 
 ``git clone git@github.com:your-username/cineverse.git
 cd cineverse``
@@ -70,7 +70,7 @@ cd cineverse``
 ``npm start``
 
 
-- Open your browser at ``http://localhost:3000````
+- Open your browser at ``http://localhost:3000`` ``
 
 ## Usage
 - Enter a movie title in the search bar
@@ -113,12 +113,12 @@ Response Example:
 ## Contributing
 
 Contributions are welcome!
-
-``- Fork the repository
+``
+- Fork the repository
 - Create a branch: git checkout -b feature/YourFeature
 - Commit your changes: git commit -m 'Add new feature'
 - Push to the branch: git push origin feature/YourFeature
-- Create a Pull Request``
+- Create a Pull Request ``
 
 ## License
 

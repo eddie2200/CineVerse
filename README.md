@@ -36,3 +36,38 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
 | Favorites           | Add or remove movies from favorites list              | ✅ Implemented  |
 | Sorting & Filtering | Filter by genre/year, sort by ratings or release date | ⚙️ In Progress |
 | Responsive Design   | Works on mobile, tablet, and desktop                  | ✅ Implemented  |
+
+## Tech Stack
+| Layer            | Technology                 |
+| ---------------- | -------------------------- |
+| Frontend         | React.js                   |
+| Styling          | Tailwind CSS               |
+| API              | OMDb API                   |
+| Routing          | React Router DOM           |
+| State Management | React useState & useEffect |
+
+## Installation & Setup
+Follow these steps to run CineVerse locally:
+
+- Clone the repository
+
+``git clone git@github.com:your-username/cineverse.git
+cd cineverse``
+
+
+- Install dependencies
+
+``npm install``
+
+
+- Create .env file with your OMDb API key:
+
+``REACT_APP_OMDB_API_KEY=your_api_key_here``
+
+
+- Run the project
+
+``npm start``
+
+
+- Open your browser at ``http://localhost:3000``

@@ -1,16 +1,31 @@
-# React + Vite
+#CineVerse – Your Ultimate Movie Database
+Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets you explore films, track favorites, and discover cinematic gems from around the world! Whether you’re a casual movie-goer or a hardcore cinephile, CineVerse makes finding your next movie adventure easy, fast, and entertaining.
+##Table of Contents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    -Project Overview
+    -Features
+    -Tech Stack
+    -Installation & Setup
+    -Usage
+    -Project Structure
+    -Wireframes
+    -API Integration
+    -Future Enhancements
+    -Contributing
+    -License
+    
+##Project Overview
 
-Currently, two official plugins are available:
+-CineVerse is an interactive web application that aggregates movie information using the OMDb API, allowing users to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Search movies by title, genre, or year
 
-## React Compiler
+-View detailed movie information, including plot, cast, ratings, and more
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-Save favorite movies to a personalized list
 
-## Expanding the ESLint configuration
+-Filter and sort movies for quick discovery
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+“Movies bring us together, but CineVerse makes it easier to find the right one!” – CineVerse Team
+
+##Features

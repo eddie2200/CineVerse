@@ -2,11 +2,11 @@
 Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets you explore films, track favorites, and discover cinematic gems from around the world! Whether you’re a casual movie-goer or a hardcore cinephile, CineVerse makes finding your next movie adventure easy, fast, and entertaining.
 
 ## Introduction
-Welcome to CineVerse, my capstone project for the ALX Software Engineering Front-End Development course!
+Welcome to CineVerse, my capstone project for the ``ALX Software Engineering Front-End Development course!``
 
-This project represents the culmination of everything I’ve learned throughout the ALX program. From mastering React and building responsive user interfaces to integrating external APIs and managing application state, CineVerse showcases my ability to design, develop, and deploy a full-featured front-end application.
+This project represents the culmination of everything I’ve learned throughout the ALX program. From mastering React and building responsive user interfaces to integrating external APIs and managing application state, CineVerse showcases my ability to design, develop and deploy a full-featured front-end application.
 
-Completing this project is the final requirement to earn my ALX Front-End Development certificate, demonstrating my proficiency in building professional, dynamic, and user-friendly web applications. Think of it as my ticket to being officially recognized as a competent front-end developer.
+Completing this project is the final requirement to earn my ALX Front-End Development certificate, demonstrating my proficiency in building professional, dynamic and user-friendly web applications. Think of it as my ticket to being officially recognized as a competent front-end developer.
 
 In CineVerse, users can:
 
@@ -18,17 +18,17 @@ This project is more than just code—it’s a showcase of my skills, creativity
 see link to website at the bottom of the ReadMe.
 ## 📂Table of Contents
 
-    -Project Overview
-    -Features
-    -Tech Stack
-    -Installation & Setup
-    -Usage
-    -Project Structure
-    -Wireframes
-    -API Integration
-    -Future Enhancements
-    -Contributing
-    -License
+    - Project Overview
+    - Features
+    - Tech Stack
+    - Installation & Setup
+    - Usage
+    - Project Structure
+    - Wireframes
+    - API Integration
+    - Future Enhancements
+    - Contributing
+    - License
     
 ## Project Overview
 

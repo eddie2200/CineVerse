@@ -1,6 +1,6 @@
-#CineVerse – Your Ultimate Movie Database
+# CineVerse – Your Ultimate Movie Database
 Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets you explore films, track favorites, and discover cinematic gems from around the world! Whether you’re a casual movie-goer or a hardcore cinephile, CineVerse makes finding your next movie adventure easy, fast, and entertaining.
-##Table of Contents
+## Table of Contents
 
     -Project Overview
     -Features
@@ -14,7 +14,7 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
     -Contributing
     -License
     
-##Project Overview
+## Project Overview
 
 -CineVerse is an interactive web application that aggregates movie information using the OMDb API, allowing users to:
 
@@ -28,4 +28,4 @@ Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets yo
 
 “Movies bring us together, but CineVerse makes it easier to find the right one!” – CineVerse Team
 
-##Features
+## Features

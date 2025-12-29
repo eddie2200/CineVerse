@@ -1,8 +1,8 @@
 # CineVerse – Your Ultimate Movie Database
-Welcome to CineVerse, a dynamic, modern, and fun movie database app that lets you explore films, track favorites, and discover cinematic gems from around the world! Whether you’re a casual movie-goer or a hardcore cinephile, CineVerse makes finding your next movie adventure easy, fast, and entertaining.
+Welcome to CineVerse, a dynamic, modern and fun movie database app that lets you explore films, track favorites and discover cinematic gems from around the world! Whether you’re a casual movie-goer or a hardcore cinephile, CineVerse makes finding your next movie adventure easy, fast and entertaining.
 
 ## Introduction
-Welcome to CineVerse, my capstone project for the ``ALX Software Engineering Front-End Development course!``
+Welcome to my capstone project for the ``ALX Software Engineering Front-End Development course!``
 
 This project represents the culmination of everything I’ve learned throughout the ALX program. From mastering React and building responsive user interfaces to integrating external APIs and managing application state, CineVerse showcases my ability to design, develop and deploy a full-featured front-end application.
 

@@ -28,8 +28,10 @@ see link to website at the bottom of the ReadMe.
     - API Integration
     - Future Enhancements
     - Contributing
+    - Website Link
     - License
-    
+
+
 ## Project Overview
 
 - CineVerse is an interactive web application that aggregates movie information using the OMDb API, allowing users to:
@@ -135,6 +137,19 @@ Contributions are welcome!
 - Commit your changes: git commit -m 'Add new feature'
 - Push to the branch: git push origin feature/YourFeature
 - Create a Pull Request 
+
+## Website Link
+
+This link will lead you to the website.
+https://cineverse-moviedatabase.netlify.app/
+
+### About deployment
+
+The deployment workflow uses **Vite** for building the React application. When you push updates to the GitHub repository, Netlify automatically runs the build process (`npm run build`) and publishes the site from the `dist/` folder, ensuring the live site is always up-to-date.
+
+Environment variables, such as the OMDb API key, are securely managed in Netlify’s settings. This setup allows the application to fetch movie data dynamically while keeping sensitive keys private.
+
+Netlify handles routing for this single-page React app, so users can navigate through pages like Home, Movie Details, and Favorites seamlessly.
 
 ## License
 

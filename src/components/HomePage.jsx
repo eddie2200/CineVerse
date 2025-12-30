@@ -159,13 +159,13 @@ function HomePage() {
             <option value="title">Title</option>
           </select>
 
-         /* <input
+          <input
             type="number"
             placeholder="Year"
             value={yearFilter}
             onChange={(e) => setYearFilter(e.target.value)}
             className="px-2 py-1 rounded text-black w-24"
-          />*/
+          />
         </div>
       </nav>
 

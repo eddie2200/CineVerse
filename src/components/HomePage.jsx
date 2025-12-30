@@ -215,7 +215,7 @@ function HomePage() {
 
       {/* FOOTER */}
       <footer className="bg-black/80 text-center py-4 text-sm">
-        &copy; {new Date().getFullYear()} Cineflix. All rights reserved.
+        &copy; {new Date().getFullYear()} CineVerse. All rights reserved.
       </footer>
     </div>
   );
